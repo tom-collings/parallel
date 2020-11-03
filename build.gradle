@@ -19,6 +19,21 @@ dependencies {
 	}
 }
 
+task getDeps(type: Copy) {
+	from sourceSets.main.runtimeClasspath
+	from sourceSets.test.runtimeClasspath
+	into 'runtime/'
+
+	doFirst {
+		ant.delete(dir: 'runtime')
+		ant.mkdir(dir: 'runtime')
+	}
+
+	doLast {
+		ant.delete(dir: 'runtime')
+	}
+}
+
 test {
 	useJUnitPlatform()
 	testLogging {

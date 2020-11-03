@@ -24,9 +24,6 @@ Once the container starts, run a single test without recompiling the classes/tes
 ./gradlew test -x classes -x testClasses --tests com.example.parallel.service.EvenServiceTest
 ```
 
-Things I don't like yet:
-- starting a gradle daemon is expensive
-- running the gradle wrapper is expensive
 
 Things still to do:
 - write a script to create the kubernetes jobs
